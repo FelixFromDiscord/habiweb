@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Habibot | Main?</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="alerts.css">
+</head>
+<body>
+	<div class="header" id="header">
+			<div class="dropdown">
+			<img src="500x500.png" alt="habibi" class="avat dropbtn" width="100px" height="100px">
+			<div class="dropdown-content">
+				<a href="https://discord.com/api/oauth2/authorize?client_id=920377854737395802&permissions=67431489&scope=bot%20applications.commands">Invite</a>
+				<a href="https://discord.gg/9mHw9h6Tc4">Discord Server</a>
+				<p id="abBtn" onclick="calert();">About</p>
+			</div>
+		</div>
+	</div>
+
+	<p class="text">ooo... wut's this???</p>
+
+	<canvas class="background"></canvas>
+	<!-- Alert box space -->
+	<div id="dialogoverlay"></div><div id="dialogbox" class="slit-in-vertical"><div><div id="dialogboxhead"></div><div id="dialogboxbody"></div><div id="dialogboxfoot"></div></div></div>
+	<script>
+	    function calert(){
+	    	const xhr = new XMLHttpRequest();
+			let resURL = "https://gist.githubusercontent.com/FelixFromDiscord/35780e23c2f24e62a0acd972471b9f2c/raw/6946e8d42769e795294236ac5f1d5446e8612853/webtext.html";
+			xhr.responseType = 'text';
+			xhr.open("GET", resURL, true);
+			xhr.send();
+			xhr.onload = () => {
+			    let dialogoverlay = document.getElementById('dialogoverlay');
+				let dialogbox = document.getElementById('dialogbox');
+				document.getElementById('dialogboxhead').innerHTML = '<i class="fa fa-exclamation-circle" aria-hidden="true"></i>'+ "About";
+				document.getElementById('dialogboxbody').innerHTML = xhr.response;
+				document.getElementById('dialogboxfoot').innerHTML = '<button class="pure-material-button-contained active" onclick="customAlert.ok()">OK</button>';
+			};
+
+			xhr.onerror = () => {
+			      console.log("Request failed!");
+			};
+
+			let winH = window.innerHeight;
+		    dialogoverlay.style.height = winH+"px";
+		    
+		    dialogbox.style.top = "100px";
+
+		    dialogoverlay.style.display = "block";
+		    dialogbox.style.display = "block";
+		    
+		    document.getElementById('dialogboxhead').style.display = 'block';
+		}
+	</script>
+	<!-- Scripts -->
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="alerts.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</body>
+</html>

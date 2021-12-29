@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+body {
+	background: rgb(68,68,68);
+	background: radial-gradient(circle, rgba(68,68,68,1) 0%, rgba(20,20,20,1) 100%);
+	font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.text{
+	color: white;
+}
+
+.avat{
+	border-radius: 50% 50% 50% 50%;
+}
+
+.avat:hover,
+.avat:active {
+	animation: wobble 2s ease infinite;
+}
+
+.header{
+	z-index: 2;
+	background: rgb(21,21,21);
+}
+
+@keyframes wobble {
+	0% {border-radius: 50% 50% 50% 50%;}
+	25% { border-radius: 35% 75% 40% 80%; }
+	50% { border-radius: 75% 40% 80% 35%; }
+	100% { border-radius:  50% 50% 50% 50%; }
+}
+
+.dropbtn {
+  background-color: #04AA6D;
+  padding: 10px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a, .dropdown-content p {
+  color: #04aa6d;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content p {
+	cursor: pointer;
+}
+
+.dropdown-content a:hover, .dropdown-content p:hover {transition: 0.6s; background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {transition: 0.6s; display: block;}
+
+.dropdown:hover .dropbtn {transition: 0.6s; background-color: #3e8e41;}
